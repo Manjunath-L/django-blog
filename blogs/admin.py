@@ -15,10 +15,6 @@ class BlogAdmin(admin.ModelAdmin):
         "status",
         "is_featured",
         "featured_image",
-        "short_description",
-        "blog_body",
-        "created_at",
-        "updated_at",
         "image_preview",
     ]
 
@@ -30,7 +26,14 @@ class BlogAdmin(admin.ModelAdmin):
     image_preview.short_description = "Preview"
 
     list_filter = ["status", "is_featured", "created_at", "updated_at"]
-    search_fields = ["id", "title", "category__category_name", "status", "short_description", "blog_body"]
+    search_fields = [
+        "id",
+        "title",
+        "category__category_name",
+        "status",
+        "short_description",
+        "blog_body",
+    ]
     list_editable = ["status", "is_featured"]
 
 
