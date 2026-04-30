@@ -6,7 +6,7 @@ from .models import Categories, Blog
 
 
 class BlogAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"sluge": ("title",)}
+    prepopulated_fields = {"slug": ("title",)}
     list_display = [
         "id",
         "title",

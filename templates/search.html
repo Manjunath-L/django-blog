@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block content %}
-{# Featured posts #}
 <h3 class="text-uppercase text-warning" style="letter-spacing: 2px">
-    Category: {{ category_name }}
+    Search results for: "{{ keyword }}"
 </h3>
 <div class="row mb-2">
-    {% if posts %}
-    {% for post in posts %}
+    {% if blogos %}
+    {% for post in blogos %}
     <div class="col-md-6">
         <div class="card border-0">
             <div class="card-body">
@@ -21,9 +19,7 @@
     </div>
     {% endfor %}
     {% else %}
-    <p>No posts available in this category.</p>
+    <p>No posts available for the keyword "{{ keyword }}".</p>
     {% endif %}
 </div>
-
-
 {% endblock %}
