@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row">
+    {# Left side bar #}
+    {% include 'dashboards/sidebar.html' %}
+    {# right side content #}
+    <div class="col-md-9">
+        <h2>Edit Category</h2>
+        <form action="{% url 'dashboards:edit_category' category.id %}" method="post" style="width: 500px;">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <br>
+            <button type="submit" class="btn btn-primary">Update Category</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
