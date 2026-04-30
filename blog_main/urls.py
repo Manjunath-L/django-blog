@@ -26,9 +26,12 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.home, name="home"),
     path("category/", include("blogs.urls")),
-    path("<slug:slug>/", blog_views.blogs, name="blogs"),
-    #search endpoint
-    path('blogs/search/', blog_views.search_blogs, name='search_blogs'),
+    # search endpoint
+    path("blogs/search/", blog_views.search_blogs, name="search_blogs"),
+    path("blogs/<slug:slug>/", blog_views.blogs, name="blogs"),
+    path("register/", views.register, name="register"),
+    path("login/", views.login_view, name="login"),
+    path("logout/", views.logout_view, name="logout"),
 ]
 
 if settings.DEBUG:

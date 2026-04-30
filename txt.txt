@@ -1,1 +1,3 @@
 djangoadmin = 1234
+
+test = 123@test
