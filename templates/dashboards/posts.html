@@ -28,7 +28,7 @@
                     <td>{{ post.category }}</td>
                     <td>{{ post.author }}</td>
                     <td>{{ post.status }}</td>
-                    <td>{% if post.is_featured %}<i class="fa-solid fa-square-check "></i>{% else %}<i
+                    <td>{% if post.is_featured %}<i class="fa-solid fa-square-check text-success "></i>{% else %}<i
                             class="fa-solid fa-square-xmark text-danger"></i>{% endif %}</td>
                     <td>
                         <a href="{% url 'dashboards:edit_post' post.pk %}"><i

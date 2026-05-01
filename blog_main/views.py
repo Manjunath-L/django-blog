@@ -30,18 +30,22 @@ def home(request):
 
 
 def register(request):
+    form = RegistrationForm()
     if request.method == "POST":
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect("home")
-    else:
-        form = RegistrationForm()
+        context = {
+            "form": form,
+        }
+        return render(request, "register.html", context)
     context = {"form": form}
     return render(request, "register.html", context)
 
 
 def login_view(request):
+    form = AuthenticationForm()
     if request.method == "POST":
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
@@ -52,7 +56,10 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 return redirect("dashboards:dashboard")
-    form = AuthenticationForm()
+        context = {
+            "form": form,
+        }
+        return render(request, "login.html", context)
     context = {"form": form}
     return render(request, "login.html", context)
 

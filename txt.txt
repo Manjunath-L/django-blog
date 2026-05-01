@@ -1,7 +1,5 @@
 djangoadmin = 1234
-
 test = 123@test
-
-   editer1  = 123@manju
-
+editer1  = 123@manju
 Manager1=@123Manju
+Bruce Wayne = @123Batman
