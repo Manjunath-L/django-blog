@@ -26,7 +26,7 @@
           <p class="fs-5 mb-4">{{ single_blog.blog_body }}</p>
 
           <!-- Comments -->
-          <h4>Comments ({{ comment_count }})</h4>
+          <h4>Comments ({{ comments|length }})</h4>
           {% if comments %}
           {% for comment in comments %}
           <div class="card mt-1">
@@ -40,7 +40,7 @@
           </div>
           {% endfor %}
           {% else %}
-          No comments yet.
+          <h3 class="">No comments yet.</h3>
           {% endif %}
           <br>
           <div class="form-group">
@@ -54,7 +54,7 @@
 
             </form>
             {% else %}
-            <p>Please <span><a href="#">login</a></span> to write a comment!</p>
+            <p>Please <span><a href="{% url 'login' %}">login</a></span> to write a comment!</p>
             {% endif %}
           </div>
 

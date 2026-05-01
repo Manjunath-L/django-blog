@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 
 # Register your models here.
-from .models import Categories, Blog
+from .models import Categories, Blog , Comment
 
 
 class BlogAdmin(admin.ModelAdmin):
@@ -45,3 +45,12 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Blog, BlogAdmin)
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ["id", "user", "blog", "comment", "created_at", "updated_at"]
+    list_filter = ["created_at", "updated_at"]
+    search_fields = ["user__username", "blog__title", "comment"]
+    
+    
+
